@@ -5,12 +5,13 @@ This repository provides the source to a imgpkg bundle for kapp-controller
 This image can be located in:
 
 ```
-quay.io/failk8s/kapp-controller:v0.20.0
+quay.io/failk8s/kapp-controller:v0.21.0
 ```
 
 ## Versions
 
 - v0.20.0
+- v0.21.0
 
 
 ## Build the image
@@ -24,6 +25,6 @@ quay.io/failk8s/kapp-controller:v0.20.0
 - Update image reference, build and push the bundle
   ```
   kbld -f . --imgpkg-lock-output .imgpkg/images.yml
-  imgpkg push --file-exclusion README.md --file-exclusion .git -b quay.io/failk8s/kapp-controller:v0.20.0 -f .
+  imgpkg push --file-exclusion README.md --file-exclusion .git -b quay.io/failk8s/kapp-controller:v0.21.0 -f .
   ```
 

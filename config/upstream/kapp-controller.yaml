@@ -196,21 +196,6 @@ spec:
                                   type: boolean
                                 ref:
                                   type: string
-                                refSelection:
-                                  properties:
-                                    semver:
-                                      properties:
-                                        constraints:
-                                          type: string
-                                        prereleases:
-                                          properties:
-                                            identifiers:
-                                              items:
-                                                type: string
-                                              type: array
-                                          type: object
-                                      type: object
-                                  type: object
                                 secretRef:
                                   description: 'Secret may include one or more keys: ssh-privatekey, ssh-knownhosts'
                                   properties:
@@ -270,21 +255,6 @@ spec:
                                   type: object
                                 subPath:
                                   type: string
-                                tagSelection:
-                                  properties:
-                                    semver:
-                                      properties:
-                                        constraints:
-                                          type: string
-                                        prereleases:
-                                          properties:
-                                            identifiers:
-                                              items:
-                                                type: string
-                                              type: array
-                                          type: object
-                                      type: object
-                                  type: object
                                 url:
                                   description: 'Example: username/app1-config:v0.1.0'
                                   type: string
@@ -299,21 +269,6 @@ spec:
                                     name:
                                       description: Object is expected to be within same namespace
                                       type: string
-                                  type: object
-                                tagSelection:
-                                  properties:
-                                    semver:
-                                      properties:
-                                        constraints:
-                                          type: string
-                                        prereleases:
-                                          properties:
-                                            identifiers:
-                                              items:
-                                                type: string
-                                              type: array
-                                          type: object
-                                      type: object
                                   type: object
                               type: object
                             inline:
@@ -592,21 +547,6 @@ spec:
                           type: boolean
                         ref:
                           type: string
-                        refSelection:
-                          properties:
-                            semver:
-                              properties:
-                                constraints:
-                                  type: string
-                                prereleases:
-                                  properties:
-                                    identifiers:
-                                      items:
-                                        type: string
-                                      type: array
-                                  type: object
-                              type: object
-                          type: object
                         secretRef:
                           description: 'Secret may include one or more keys: ssh-privatekey, ssh-knownhosts'
                           properties:
@@ -666,21 +606,6 @@ spec:
                           type: object
                         subPath:
                           type: string
-                        tagSelection:
-                          properties:
-                            semver:
-                              properties:
-                                constraints:
-                                  type: string
-                                prereleases:
-                                  properties:
-                                    identifiers:
-                                      items:
-                                        type: string
-                                      type: array
-                                  type: object
-                              type: object
-                          type: object
                         url:
                           description: 'Example: username/app1-config:v0.1.0'
                           type: string
@@ -695,21 +620,6 @@ spec:
                             name:
                               description: Object is expected to be within same namespace
                               type: string
-                          type: object
-                        tagSelection:
-                          properties:
-                            semver:
-                              properties:
-                                constraints:
-                                  type: string
-                                prereleases:
-                                  properties:
-                                    identifiers:
-                                      items:
-                                        type: string
-                                      type: array
-                                  type: object
-                              type: object
                           type: object
                       type: object
                     inline:
@@ -1165,21 +1075,6 @@ spec:
                         type: boolean
                       ref:
                         type: string
-                      refSelection:
-                        properties:
-                          semver:
-                            properties:
-                              constraints:
-                                type: string
-                              prereleases:
-                                properties:
-                                  identifiers:
-                                    items:
-                                      type: string
-                                    type: array
-                                type: object
-                            type: object
-                        type: object
                       secretRef:
                         description: 'Secret may include one or more keys: ssh-privatekey, ssh-knownhosts'
                         properties:
@@ -1220,21 +1115,6 @@ spec:
                         type: object
                       subPath:
                         type: string
-                      tagSelection:
-                        properties:
-                          semver:
-                            properties:
-                              constraints:
-                                type: string
-                              prereleases:
-                                properties:
-                                  identifiers:
-                                    items:
-                                      type: string
-                                    type: array
-                                type: object
-                            type: object
-                        type: object
                       url:
                         description: 'Example: username/app1-config:v0.1.0'
                         type: string
@@ -1249,21 +1129,6 @@ spec:
                           name:
                             description: Object is expected to be within same namespace
                             type: string
-                        type: object
-                      tagSelection:
-                        properties:
-                          semver:
-                            properties:
-                              constraints:
-                                type: string
-                              prereleases:
-                                properties:
-                                  identifiers:
-                                    items:
-                                      type: string
-                                    type: array
-                                type: object
-                            type: object
                         type: object
                     type: object
                 type: object
@@ -1369,18 +1234,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kapp-controller.carvel.dev/version: v0.24.0
     kbld.k14s.io/images: |
       - Metas:
-        - Path: /Users/dhelfand/Documents/GitHub/carvel-kapp-controller
+        - Path: /Users/embp/go/src/github.com/vmware-tanzu/carvel-kapp-controller
           Type: local
         - Dirty: false
-          RemoteURL: https://github.com/vmware-tanzu/carvel-kapp-controller.git
-          SHA: a9f13d0c02645f9fb4b9699f993aa234f44f14f4
-          Tags:
-          - v0.24.0
+          RemoteURL: git@github.com:vmware-tanzu/carvel-kapp-controller.git
+          SHA: 84fbfc9e426bfc9b4200319c38de29b0b7f82598
           Type: git
-        URL: index.docker.io/k14s/kapp-controller@sha256:ee05e345582e51a02249a24adf67c53f65a5fcc404bd41e74cd22704674f211f
+        URL: index.docker.io/k14s/kapp-controller@sha256:3e5e6e47c1011baccb66838904e816b0e1ce697327281b5e2d88307244af193a
   name: kapp-controller
   namespace: kapp-controller
 spec:
@@ -1406,7 +1268,7 @@ spec:
               fieldPath: metadata.namespace
         - name: KAPPCTRL_API_PORT
           value: "10350"
-        image: index.docker.io/k14s/kapp-controller@sha256:ee05e345582e51a02249a24adf67c53f65a5fcc404bd41e74cd22704674f211f
+        image: index.docker.io/k14s/kapp-controller@sha256:3e5e6e47c1011baccb66838904e816b0e1ce697327281b5e2d88307244af193a
         name: kapp-controller
         ports:
         - containerPort: 10350
@@ -1445,8 +1307,8 @@ rules:
   - ""
   resources:
   - secrets
+  - configmaps
   verbs:
-  - create
   - get
   - list
   - watch
