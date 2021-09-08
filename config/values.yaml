@@ -1,21 +1,20 @@
 #@data/values
 #@overlay/match-child-defaults missing_ok=True
-
 ---
+namespace: kapp-controller
 kappController:
-  namespace: kapp-controller
+  namespace: null
   createNamespace: true
-  image:
-    repository: registry.tkg.vmware.run/tkg
-    path: kapp-controller
-    tag: v0.16.0_vmware.1
-    pullPolicy: IfNotPresent
+  globalNamespace: tanzu-package-repo-global
   deployment:
     hostNetwork: null
     priorityClassName: null
-    concurrency: 2
+    concurrency: 4
+    tolerations: []
+    apiPort: 10350
   config:
     caCerts: ""
     httpProxy: ""
     httpsProxy: ""
     noProxy: ""
+    dangerousSkipTLSVerify: ""
