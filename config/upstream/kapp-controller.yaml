@@ -1234,15 +1234,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
+    kapp-controller.carvel.dev/version: v0.23.0
     kbld.k14s.io/images: |
       - Metas:
         - Path: /Users/dk/workspace/k14s-go/src/github.com/vmware-tanzu/carvel-kapp-controller
           Type: local
         - Dirty: false
           RemoteURL: git@github.com:vmware-tanzu/carvel-kapp-controller
-          SHA: 8b86a7b15379c94c96ce6a6de31fb966e2e1cd3c
+          SHA: 34e7f460409ba066b30162e4c4077f64e24c1243
+          Tags:
+          - v0.23.0
           Type: git
-        URL: index.docker.io/k14s/kapp-controller@sha256:a05cf73aa5e14d354f07d3de8ef80769cca27f1afe0e0b7a86b6d25031721780
+        URL: index.docker.io/k14s/kapp-controller@sha256:d7818225512f149b782323d02193fe5866e0e329a5fa5497e5c6870f390ddb77
   name: kapp-controller
   namespace: kapp-controller
 spec:
@@ -1268,7 +1271,7 @@ spec:
               fieldPath: metadata.namespace
         - name: KAPPCTRL_API_PORT
           value: "10350"
-        image: index.docker.io/k14s/kapp-controller@sha256:a05cf73aa5e14d354f07d3de8ef80769cca27f1afe0e0b7a86b6d25031721780
+        image: index.docker.io/k14s/kapp-controller@sha256:d7818225512f149b782323d02193fe5866e0e329a5fa5497e5c6870f390ddb77
         name: kapp-controller
         ports:
         - containerPort: 10350
