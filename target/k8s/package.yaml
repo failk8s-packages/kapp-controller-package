@@ -1,27 +1,16 @@
----
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  annotations:
-    kbld.k14s.io/images: |
-      - origins:
-        - resolved:
-            tag: 0.27.0
-            url: quay.io/failk8s/kapp-controller-package:0.27.0
-        url: quay.io/failk8s/kapp-controller-package@sha256:efefff13ce3c28de31977799944f3fdc547213a5259a769c986664231090152b
-  name: kapp-controller.dev.failk8s.com.0.27.0
+  name: kapp-controller.dev.failk8s.com.0.0.0+develop
   namespace: kapp-controller-packaging-global
 spec:
   refName: kapp-controller.dev.failk8s.com
+  version: 0.0.0+develop
   template:
     spec:
-      deploy:
-      - kapp:
-          rawOptions:
-          - --wait-timeout=5m
       fetch:
       - imgpkgBundle:
-          image: quay.io/failk8s/kapp-controller-package@sha256:efefff13ce3c28de31977799944f3fdc547213a5259a769c986664231090152b
+          image: quay.io/failk8s/kapp-controller-package:develop
       template:
       - ytt:
           paths:
@@ -30,4 +19,7 @@ spec:
           paths:
           - '-'
           - .imgpkg/images.yml
-  version: 0.27.0
+      deploy:
+      - kapp:
+          rawOptions:
+          - --wait-timeout=5m

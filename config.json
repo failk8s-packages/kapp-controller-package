@@ -4,7 +4,7 @@
         "name": "kapp-controller",
         "domain": "dev.failk8s.com",
         "displayName": "kapp-controller",
-        "version": "0.27.0"
+        "version": "develop"
     },
     "packages":[]
 }
