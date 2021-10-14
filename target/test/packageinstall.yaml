@@ -8,7 +8,7 @@ spec:
   packageRef:
     refName: kapp-controller.dev.failk8s.com
     versionSelection:
-      constraints: 0.0.0+develop
+      constraints: 0.27.0
       prereleases: {}
   values:
   - secretRef:
