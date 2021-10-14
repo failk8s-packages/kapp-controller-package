@@ -1,5 +1,5 @@
 #@ load("@ytt:overlay", "overlay")
-#@ load("/values.star", "values", "kappNamespace")
+#@ load("values.star", "values", "kappNamespace")
 
 #@overlay/match by=overlay.subset({"kind":"Deployment","metadata":{"name": "kapp-controller"}})
 #@overlay/insert before=True

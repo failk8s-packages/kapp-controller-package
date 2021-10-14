@@ -1,5 +1,5 @@
 #@ load("@ytt:overlay", "overlay")
-#@ load("/values.star", "values", "kappNamespace")
+#@ load("values.star", "values", "kappNamespace")
 #@ load("@ytt:yaml", "yaml")
 
 #@ if values.kappController.createNamespace:

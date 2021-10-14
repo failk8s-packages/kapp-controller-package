@@ -1,0 +1,15 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: kapp-controller
+  namespace: kapp-controller-package
+spec:
+  serviceAccountName: kapp-controller
+  packageRef:
+    refName: kapp-controller.dev.failk8s.com
+    versionSelection:
+      constraints: 0.0.0+develop
+      prereleases: {}
+  values:
+  - secretRef:
+      name: kapp-controller

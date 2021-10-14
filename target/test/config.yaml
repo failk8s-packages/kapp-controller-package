@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kapp-controller
+  namespace: kapp-controller-package
+stringData:
+  values.yml: null

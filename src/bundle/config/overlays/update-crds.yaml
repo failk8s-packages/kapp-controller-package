@@ -1,5 +1,5 @@
 #@ load("@ytt:overlay", "overlay")
-#@ load("/values.star", "values")
+#@ load("values.star", "values")
 
 #@overlay/match by=overlay.subset({"kind":"CustomResourceDefinition","metadata":{"name": "packagerepositories.packaging.carvel.dev"}})
 ---

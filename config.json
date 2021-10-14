@@ -1,0 +1,10 @@
+{
+    "registry": "quay.io/failk8s",
+    "package": {
+        "name": "kapp-controller",
+        "domain": "dev.failk8s.com",
+        "displayName": "kapp-controller",
+        "version": "develop"
+    },
+    "packages":[]
+}
