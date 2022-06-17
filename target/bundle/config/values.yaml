@@ -2,16 +2,27 @@
 #@overlay/match-child-defaults missing_ok=True
 ---
 namespace: kapp-controller
+nodeSelector: null
+deployment:
+  updateStrategy: null
+  rollingUpdate:
+    maxUnavailable: null
+    maxSurge: null
+daemonset:
+  updateStrategy: null
 kappController:
   namespace: null
   createNamespace: true
   globalNamespace: tanzu-package-repo-global
   deployment:
-    hostNetwork: null
+    #! The coreDNSIP will be injected into /etc/resolv.conf of kapp-controller pod
+    coreDNSIP: null
+    hostNetwork: false
     priorityClassName: null
     concurrency: 4
     tolerations: []
     apiPort: 10350
+    metricsBindAddress: ":8080"
   config:
     caCerts: ""
     httpProxy: ""
